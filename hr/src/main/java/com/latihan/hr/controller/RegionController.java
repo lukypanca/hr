@@ -9,7 +9,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/regions")
+@RequestMapping(value = "/region")
 public class RegionController {
 
     @Autowired

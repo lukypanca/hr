@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
+@RequestMapping(value = "/country")
 public class CountryController {
     
     @Autowired
@@ -33,7 +35,7 @@ public class CountryController {
     }
 
     // FIND ALL WITH PAGINATION
-    @GetMapping(path = "findAllWithPagination")
+    @GetMapping(path = "/findAllWithPagination")
     DataResponsePagination<CountryWrapper, Country> findAllWithPagination(@RequestParam int page, @RequestParam int size) {
         return new DataResponsePagination<CountryWrapper, Country>(countryService.findAllWithPagination(page, size));
     }
